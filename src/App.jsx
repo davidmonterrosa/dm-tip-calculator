@@ -7,9 +7,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='min-w-screen w-full'>
-      <FormAreaComponent/>
-      <ResultAreaComponent/>
+    <div className='grid auto-rows-3 place-content-center min-w-screen w-full bg-lightGrayishCyan'>
+      <h1 className='font-["SpaceMono"] uppercase text-darkGrayishCyan tracking-[.5em] my-20'>spli <br /> tter</h1>
+        <FormAreaComponent/>
     </div>
   )
 }
