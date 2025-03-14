@@ -19,19 +19,21 @@ const FormAreaComponent = () => {
         return `${tipNumber}`;
     }
     const calculateTotals = (percentValue) => {
-        tipValue = calculateTips(percentValue);
-        tipValue = parseFloat(tipValue)
-        console.log(tipValue);
-        console.log(billTotal);
-        setTipSplit(tipValue / people);
-        combinedTotal = billTotal + tipValue;
-        console.log(combinedTotal)
-        return `${combinedTotal}`;
+        if(billTotal != 0 && people != 0) {
+            tipValue = calculateTips(percentValue);
+            tipValue = parseFloat(tipValue)
+            console.log(tipValue);
+            console.log(billTotal);
+            setTipSplit(tipValue / people);
+            combinedTotal = billTotal + tipValue;
+            console.log(combinedTotal)
+            return `${combinedTotal}`;
+        }
     }
 
 
     useEffect(() => {
-        if(people != 0) {
+        if(people != 0 && billTotal != 0) {
             setTotalSplit(billAndTipTotal / people)
         }
     }, [percentValue])
@@ -164,8 +166,11 @@ const FormAreaComponent = () => {
                     </article>
                 </section>
 
-                <button className='bg-strongCyan hover:bg-lightGrayishCyan font-bold font-["SpaceMono"] text-2xl uppercase text-veryDarkCyan rounded-lg w-full' onClick={() => {
+                <button className={tipSplit == 0.00 && totalSplit == 0.00 && billTotal == 0 &&people ==0 ?'bg-darkGrayishCyan hover:bg-lightGrayishCyan font-bold font-["SpaceMono"] text-2xl uppercase text-veryDarkCyan rounded-lg w-full' : 'bg-strongCyan hover:bg-lightGrayishCyan font-bold font-["SpaceMono"] text-2xl uppercase text-veryDarkCyan rounded-lg w-full'} onClick={() => {
                     setTipSplit(0.00);
+                    setBillTotal(0);
+                    setPeople(0);
+                    setTipPercentEntry("")
                     console.log("Reset", total.innertext)
                     setTotalSplit(0.00);
                 }}>Reset</button>
