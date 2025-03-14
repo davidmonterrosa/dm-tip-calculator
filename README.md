@@ -9,5 +9,5 @@ Create a tip Calculator from the FrontEndMentor starter
 - Tailwind CSS
 - Desktop and Mobile Versions
 
-Peer Reviewed By: name
-> review
+Peer Reviewed By: Alexander Soria
+> Your website vaguely resembles what's on the prototype, with good responsiveness, though there seems to be a lot of glaring issues with the backend, as results don't properly update sometimes when editing the boxes, and the text boxes don't properly clear if you hit RESET. Overall the result is decent and at least it functions as intended!
